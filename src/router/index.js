@@ -1,6 +1,6 @@
 // Composables
 import { createRouter, createWebHistory } from 'vue-router'
-import { Auth } from "aws-amplify";
+import { Auth, Hub } from "aws-amplify";
 
 const routes = [
   {
@@ -12,19 +12,7 @@ const routes = [
   {
     path: "/signin",
     name: "Signin",
-    component: () => import("@/views/Signin.vue"),
-    // path: '/',
-    // component: () => import('@/layouts/default/Default.vue'),
-    // children: [
-    //   {
-    //     path: '',
-    //     name: 'Home',
-    //     // route level code-splitting
-    //     // this generates a separate chunk (about.[hash].js) for this route
-    //     // which is lazy-loaded when the route is visited.
-    //     component: () => import(/* webpackChunkName: "home" */ '@/views/Home.vue'),
-    //   },
-    // ],
+    component: () => import("@/views/Signin.vue"),   
   },
 ]
 
@@ -32,6 +20,16 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
+
+// Amplify supplies a Hub that listens for events, we are interested in sign-in and sign-out events
+Hub.listen("auth", async (data) => {
+  if (data.payload.event === 'signOut'){      
+      router.push({path: '/signin'});
+  } else if (data.payload.event === 'signIn') {      
+      router.push({path: '/'});
+  }
+});
+
 
 // Adding method to chech if user is authenticated before moving navigating to the requested page
 router.beforeEach(async (to, from, next) => {
@@ -42,14 +40,17 @@ router.beforeEach(async (to, from, next) => {
       const user = await Auth.currentAuthenticatedUser();      
       if (!user) {
         // Not authenticated, so redirect to signin page.
+        console.log("Detected user not already signed in, redirecting to signin view")
         next("/signin");
       } 
       else {
         // They are authenticated, so we can continue.
+        console.log("Use is authenticated")
         next();
       }
     } catch (err) {
       // Error, so redirect to signin page.
+      console.log("Signin error")
       next("/signin");
     }
   } else {

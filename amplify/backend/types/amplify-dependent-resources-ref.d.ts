@@ -1,4 +1,10 @@
 export type AmplifyDependentResourcesAttributes = {
+  "api": {
+    "myeventplanner": {
+      "GraphQLAPIEndpointOutput": "string",
+      "GraphQLAPIIdOutput": "string"
+    }
+  },
   "auth": {
     "myeventplannerAuth": {
       "AppClientID": "string",
@@ -11,6 +17,12 @@ export type AmplifyDependentResourcesAttributes = {
     },
     "userPoolGroups": {
       "adminsGroupRole": "string"
+    }
+  },
+  "storage": {
+    "EventImages": {
+      "BucketName": "string",
+      "Region": "string"
     }
   }
 }

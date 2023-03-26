@@ -15,6 +15,12 @@
       "auth": {
         "myeventplannerAuth": {},
         "userPoolGroups": {}
+      },
+      "storage": {
+        "EventImages": {}
+      },
+      "api": {
+        "myeventplanner": {}
       }
     }
   }
