@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "api": {
+      "myeventplanner": [
+        "Query"
+      ]
+    }
+  },
+  "lambdaLayers": []
+}
