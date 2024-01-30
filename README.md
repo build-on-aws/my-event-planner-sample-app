@@ -1,28 +1,29 @@
-## My Event Planner (Sample App)
+## Building a Serverless Web App with Amplify (Sample App)
 
-This repo contains sample app code to accompany [AWS Workshop Studio](https://catalog.us-east-1.prod.workshops.aws/workshops/1665a9b6-958b-4b70-ba52-14127b8fa99f/en-US) labs.   
+This repo contains sample app code to accompany AWS Workshop Studio [Building a Serverless Web App with Amplify](https://catalog.us-east-1.prod.workshops.aws/workshops/1665a9b6-958b-4b70-ba52-14127b8fa99f/en-US) labs.   
 The sample app is an event planning app for students on campus.   
 Students can create events that other students can browse.   
 
-There are currently 3 labs in the workshop, and there are 3 corresponding branches in the repo:
+Update Jan 2024:
+There are currently 2 labs in the workshop, and there are 2 corresponding branches in the repo:
 1. Lab 1: Minimal web app with user authentication (Amazon Cognito)
-2. Lab 2: Adding data and storage to the web app (Amazon S3 and Amazon DynamoDB)
-3. Lab 3: Adding serverless functions (AWS Lambda)
+2. Lab 2: Adding data to the web app (Amazon S3 and Amazon DynamoDB)
 
 ### Audience
-This is a foundational repo aimed at students learning serverless cloud concepts for the first time.
+This is a foundational repo aimed at students learning serverless cloud concepts for the first time.  
+The web app is supplied, but basic knowledge of web development is useful.  
 
 ### Technology and Services
 The app stack:
-* Node.js, Javascript, and GraphQL
-* Vue.js, Vuetify.js, and Vite
+* [Node.js](https://nodejs.org/) & JavaScript
+* [Vue](https://vuejs.org/)
+* [Vuetify](https://vuetifyjs.com/)
+* [Vite](https://vitejs.dev/)
 
-The app uses:
-* [AWS Amplify](https://aws.amazon.com/amplify/) to provision services including:
-    * [Amazon Cognito](https://aws.amazon.com/cognito/) 
-    * [Amazon S3](https://aws.amazon.com/s3/) 
-    * [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) 
-    * [AWS Lambda](https://aws.amazon.com/lambda/)		
+The labs show you how to add these services to the app with AWS Amplify:
+* [AWS Amplify](https://aws.amazon.com/amplify/):
+    * [Amazon Cognito](https://aws.amazon.com/cognito/)     
+    * [Amazon DynamoDB](https://aws.amazon.com/dynamodb/)     
 
 The app requires an AWS account to provision and run:
 * If you are attending an AWS Workshop event, this is supplied to you. 
@@ -32,10 +33,13 @@ The app requires an AWS account to provision and run:
 
 ### Prerequisites
 The following software is required:
-1. [Node.js](https://nodejs.org/en/download)
+1. [Git](https://git-scm.com/)
+1. [Node.js, which includes NPM](https://nodejs.org/en/download)
 1. [AWS Amplify CLI](https://docs.amplify.aws/cli/start/install/)
 
-The latest, stable version should be used, and the versions used at time of authoring:
+As these tools are often updated, it's possible this repo will 'break' or fail to compile/run when one of the tools is updated.  
+It is usually possible to switch to a specific previouis version of the tools if that happens.  
+The versions used at time of authoring:
 * Node.js: **v18.15.0**   
 * AWS Amplify CLI: **11.0.3**
 
