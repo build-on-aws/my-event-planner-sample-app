@@ -11,7 +11,7 @@
   "dependencies": {
     "@aws-amplify/ui-vue": "^3.1.11",
     "@mdi/font": "7.0.96",
-    "aws-amplify": "^5.0.22",
+    "aws-amplify": "^5.3.15",
     "core-js": "^3.8.3",
     "roboto-fontface": "*",
     "vue": "^3.2.13",
