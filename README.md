@@ -1,4 +1,4 @@
-## Building a Serverless Web App with Amplify (Sample App)
+## Building a Serverless Web App with AWS Amplify (Sample App)
 
 This repo contains sample app code to accompany AWS Workshop Studio [Building a Serverless Web App with Amplify](https://catalog.us-east-1.prod.workshops.aws/workshops/1665a9b6-958b-4b70-ba52-14127b8fa99f/en-US) labs.   
 The sample app is an event planning app for students on campus.   
@@ -7,7 +7,7 @@ Students can create events that other students can browse.
 Update Jan 2024:
 There are currently 2 labs in the workshop, and there are 2 corresponding branches in the repo:
 1. Lab 1: Minimal web app with user authentication (Amazon Cognito)
-2. Lab 2: Adding data to the web app (Amazon S3 and Amazon DynamoDB)
+2. Lab 2: Adding data to the web app (Amazon DynamoDB)
 
 ### Audience
 This is a foundational repo aimed at students learning serverless cloud concepts for the first time.  
@@ -38,83 +38,12 @@ The following software is required:
 1. [AWS Amplify CLI](https://docs.amplify.aws/cli/start/install/)
 
 As these tools are often updated, it's possible this repo will 'break' or fail to compile/run when one of the tools is updated.  
-It is usually possible to switch to a specific previouis version of the tools if that happens.  
+It is usually possible to switch to a specific previous version of the tools if that happens.  
 The versions used at time of authoring:
-* Node.js: **v18.15.0**   
-* AWS Amplify CLI: **11.0.3**
+* Node.js: **v20.5.1**   
+* AWS Amplify CLI: **12.10.1**
 
-### Installation
-If in hosted workshop: 
-1. Clone the repo
-1. In the repo root folder:
-    1. `npm install`    
-    1. `npm install aws-amplify @aws-amplify/ui-vue`
-    1. `amplify configure`
-        1. You will be prompted to:
-            ````
-            Sign in to your AWS administrator account:
-            https://console.aws.amazon.com/
-            Press Enter to continue
-            ````
-        1. Ignore and press enter to continue
-        1. Select region: **us-east-1**
-        1. You will be prompted to:
-            ````
-            Follow the instructions at
-            https://docs.amplify.aws/cli/start/install/#configure-the-amplify-cli
-            to complete the user creation in the AWS console
-            https://console.aws.amazon.com/iamv2/home#/users/create
-            Press Enter to continue
-            ````
-        1. Ignore and press enter to continue
-        1. When prompted to:
-            ````
-            Enter the access key of the newly created user:
-            ? accessKeyId: [hidden]
-            ? secretAccessKey: [hidden]
-            ````
-        1. Enter the keys that can be found on the **Get AWS CLI credentials** sidebar link on the Workshop Studio page.
-        1. Enter the profile name of your choice (you can have several profiles) or accept the default                
-    1. `amplify push`
-
-If supplying your own AWS account, choose:
-1. Clone the repo
-1. In the repo root folder:
-    1. `npm install`    
-    1. `amplify configure`
-        1. [Follow the steps](https://docs.amplify.aws/cli/start/install/#configuring-the-amplify-cli) to use your own AWS account to configure Amplify            
-    1. `amplify push`
-
-### Running
-1. In the repo root folder:
-    1. **npm run dev**
-    1. Open the localhost website (http://localhost:3000 is the default)
-    1. On first launching this app, select the **Create Account** tab and create an account by entering a valid email address and password.
-        * The verification code will be sent to the email address, verify account before proceeding        
-    1. Sign in using this address
-
-Optional - if you want to access the Admin features of this app (for creating some mock data), then:
-In the repo root folder:
-1. `amplify console`
-    1. Select **AWS console**
-    1. Open the link supplied by the Amplify CLI
-    1. Select **Go to Amplify Studio to enable.**
-    1. Switch **Enable Amplify Studio.** to **On**
-    1. Once enabled, go back on page and select **Launch Studio**, ensure you allow the new window to open (in case your browser blocks it)
-    1. In Amplify Studio, select **User management** from the sidebar
-        1. You should see any accounts you have already created in the Users list.
-    1. Select Groups, you should see *admins* in the list
-    1. Select admins, then **Add user(s)**
-    1. Find a user by email that you want to add as an admin, select **Add users**
-1. Should you ever want to return to Amplify Studio, select **Amplify Studio** from the options `amplify console` presents
-
-### Clean-up
-To ensure you are not charged, delete the AWS Amplify app that was created by the installation steps above. 
-> Note, that this will also delete the generated Amplify source code files such as schema.graphql. If you wish to keep those files, copy them somewhere else or create a repo with them before running this.
-1. **amplify delete**
-
-
-## Security
+## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
 
