@@ -1,0 +1,270 @@
+[
+    {
+      "name": "Trivia Night",
+      "description": "Test your knowledge at our fun trivia night! Bring your friends and form a team to compete for prizes."
+    },
+    {
+      "name": "Dodgeball Tournament",
+      "description": "Join our dodgeball tournament for a fast-paced and exciting competition between student teams. May the best dodgers win!"
+    },
+    {
+      "name": "Karaoke Party",  
+      "description": "Show off your singing skills at our lively karaoke party! Grab the mic and sing your heart out with friends."
+    },
+    {
+      "name": "Mini Golf Madness",
+      "description": "Play a round of mini golf with friends old and new! Enjoy some friendly competition at the mini golf course."
+    },
+    {
+      "name": "International Food Fair",
+      "description": "Sample dishes from around the world at our international food fair. Expand your culinary horizons with exotic flavors."
+    },
+    {
+      "name": "Scavenger Hunt",
+      "description": "Embark on an exciting scavenger hunt across campus and win prizes! Form teams and put your heads together to crack clues."
+    },
+    {
+      "name": "Open Mic Night",
+      "description": "Perform your stand-up, poetry, songs, or comedy act at our open mic night! Sign up and show off your talents."
+    },
+    {
+      "name": "Capture the Flag",
+      "description": "Play this classic game under the stars on the quad! Strategy, speed and teamwork will lead your team to victory."
+    },
+    {
+      "name": "Masquerade Ball",
+      "description": "Attend our lavish masquerade ball in masks and costumes for a night of mystery and intrigue. Dance the night away with friends."
+    },
+    {
+      "name": "Carnival Extravaganza", 
+      "description": "Play carnival games, eat classic treats, and have fun at our colorful carnival! Win prizes at booths and shows."
+    },
+    {
+      "name": "Talent Show",
+      "description": "Cheer on your talented peers at our talent show! Singing, dancing, magic - anything goes on our stage."
+    },
+    {
+      "name": "Bonfire Bash",
+      "description": "Join us around a crackling bonfire for s'mores, stories, and stargazing. Bring blankets for a cozy night of camping under the stars."
+    },
+    {
+      "name": "Dance Party",
+      "description": "Dance the night away with friends at our exciting dance party with a live DJ! Show off your best moves to top hits."
+    },
+    {
+      "name": "Skating Soiree",
+      "description": "Lace up your skates for an evening of fun at our retro rollerskating soiree! Skate to hits and make memories."
+    },
+    {
+      "name": "Bowling Bonanza",
+      "description": "Knock down pins and bond with friends old and new at our bowling bonanza. With music, snacks and colorful lights!"
+    },
+    {
+      "name": "Picnic in the Park",
+      "description": "Enjoy tasty treats and refreshing drinks at our breezy picnic in the park! Bring blankets and games to this green get-together."
+    },
+    {
+      "name": "Snow Day Celebration",
+      "description": "Get into the winter spirit at our snow day celebration with hot cocoa, sledding and snowmen! Bundle up and come play in the snow."
+    },
+    {
+      "name": "Hiking Adventure",
+      "description": "Explore nature on our scenic hiking adventure! Follow trails through forests and peaks surrounding our campus."
+    },
+    {
+      "name": "Yoga in the Lounge",
+      "description": "Do sun salutations in the lounge at our yoga session for students. Stretch out with friends at this rejuvenating event."
+    },
+    {
+      "name": "Ice Skating Soiree",
+      "description": "Glide across the ice holding hands with friends at our winter wonderland ice skating soiree. Hot chocolate wait afterward!"
+    },
+    {
+      "name": "Amusement Park Trip",
+      "description": "Scream on rollercoasters and win giant plushies at our exciting amusement park trip! Make magical memories with friends new and old."
+    },
+    {
+      "name": "Camping Getaway",
+      "description": "Roast marshmallows and sleep under the stars on our weekend camping getaway. Bond with nature and new friends in the great outdoors."
+    },
+    {
+      "name": "Superhero Photo Booth",
+      "description": "Strike heroic poses at our superhero themed photo booth! Dress up, ham it up, and take home pics with friends."
+    },
+    {
+      "name": "Puppy Playdate",
+      "description": "Destress and get your puppy fix at our puppy playdate! These furry friends bring joy and comfort to students."
+    },
+    {
+      "name": "Basketball Bonanza",
+      "description": "Dribble, pass, and shoot hoops at our 3-on-3 basketball tournament! Assemble your best players and go for the win."
+    },
+    {
+      "name": "Sandcastle Contest",
+      "description": "Show off your sculpting skills in our sandcastle contest at the beach! Build the most creative castle and win prizes."
+    },
+    {
+      "name": "Board Game Night",
+      "description": "Break out the classics for a night of checkers, chess, Monopoly and more! Snacks, drinks and friendly competition provided."
+    },
+    {
+      "name": "Limbo Competition", 
+      "description": "How low can you go? Find out at our fun limbo competition! See who can shimmy under the bar to triumph."
+    },
+    {
+      "name": "Holiday Bazaar",
+      "description": "Get into the holiday spirit at our festive bazaar! Shop gifts by student artisans and enjoy music and treats."
+    },
+    {
+      "name": "Pumpkin Carving Party",
+      "description": "Carve creative jack-o-lanterns at our pumpkin carving party! Roast pumpkin seeds and display your work."
+    },
+    {
+      "name": "Paintball Panthers",
+      "description": "Join the Paintball Panthers for an action-packed day running, dodging and diving! Victory goes to the stealthiest team."
+    },
+    {
+      "name": "Bungee Run",
+      "description": "Take a wild ride on our massive bungee run! Strap in and get launched skyward for an adrenaline rush."
+    },
+    {
+      "name": "Game Day Tailgate",
+      "description": "Fire up the grill for burgers and dogs at our game day tailgate party! Eat, socialize and cheer on our team."
+    },
+    {
+      "name": "Scary Movie Marathon",
+      "description": "Grab a blanket and join us for a marathon of classic horror movies. Don't watch alone - bring friends for scares and laughs!"
+    },
+    {
+      "name": "Arts and Crafts Festival",
+      "description": "Get creative at our arts and crafts festival! Make tie dye shirts, picture frames, candles, and other DIY projects."
+    },
+    {
+      "name": "Water Balloon Fight",
+      "description": "Dodge and throw water balloons across the quad at our fun water balloon fight! Get soaked and cool down on a hot day."
+    },
+    {  
+      "name": "Taco Tuesday",
+      "description": "Celebrate Taco Tuesday with our taco buffet! Enjoy walking tacos, nachos and more with friends."
+    },
+    {
+      "name": "Karaoke Contest",
+      "description": "Show off your pipes at our karaoke contest! Perform your favorite hits and wow judges for a chance to win big."
+    },
+    {
+      "name": "3-Point Shootout",
+      "description": "Swish shot after shot in our basketball 3-point shootout! Shoot your way through heats and compete for the top score."
+    },
+    {
+      "name": "Obstacle Course",
+      "description": "Test your speed and agility on our challenging obstacle course! Climb walls, crawl through tunnels and more in a race to the finish."
+    },
+    {
+      "name": "Fashion Show",
+      "description": "Strut your stuff on the runway at our fashion show featuring student designers' clothing lines! Dress to impress and cheer on models."
+    },
+    {
+      "name": "Haunted House",
+      "description": "Brave the thrills and chills of our spooky haunted house if you dare! Twist and turn through dark corridors filled with ghosts and ghouls."
+    },
+    {
+      "name": "Surf Club Beach Day",
+      "description": "Catch a wave with the surf club at beach day! Grab a board and hang ten with friends new and old."
+    },
+    {
+      "name": "Disney Dance Party",
+      "description": "Relive your childhood at our magical disney dance party! Dress as your favorite character and dance to disney hits."
+    },
+    {
+      "name": "Coffee House Night",
+      "description": "Enjoy an evening of live music at our cozy coffee house night in the student union. Play an open mic or just sit back with coffee and friends."
+    },
+    {
+        "name": "Coffee House Night",
+        "description": "Enjoy an evening of live music at our cozy coffee house night in the student union. Play an open mic or just sit back with coffee and friends."
+      },
+      {
+        "name": "3-Legged Race", 
+        "description": "Tie your leg to a partner and race to the finish in this silly 3-legged race! Match your stride as you run together."
+      },
+      {
+        "name": "Tie-Dye Party",
+        "description": "Unleash your creativity with colorful tie-dye at our groovy tie-dye party! Make shirts, socks, bandanas and other accessories."
+      },
+      {
+        "name": "Pajama Party Movie Night",
+        "description": "Snuggle up in pajamas for a cozy movie night with friends! Bring your favoriteBlankets, pillows and snacks provided."
+      },
+      {
+        "name": "Ping Pong Tournament",
+        "description": "Smash the ball back and forth in our intense ping pong tournament! Train and compete to become the ping pong champ."
+      },
+      {
+        "name": "Silent Disco",
+        "description": "Dance to music through headphones at our psychedelic silent disco party! Choose between competing DJs via different channels."
+      },
+      {
+        "name": "Carnival Night",
+        "description": "Step right up to play carnival games and win prizes! Try your hand at ring toss, milk bottle toss, balloon darts and more."
+      },
+      {
+        "name": "Karaoke Contest",
+        "description": "Grab the microphone and belt out tunes at our karaoke contest! Impress judges and compete to win."
+      },
+      {
+        "name": "Foam Party",
+        "description": "Get soaked in bubbles and foam at our wild foam party! Dance and play in mountains of fluffy foam."
+      },
+      {
+        "name": "Cook-Off Challenge",
+        "description": "Whip up your most delicious dish at our cook-off challenge! Impress celebrity chef judges and take home the prize."
+      },
+      {
+        "name": "Pumpkin Patch",
+        "description": "Pick the perfect pumpkin at our pumpkin patch! Take hayrides, enjoy apple cider and explore the patch with friends."
+      },
+      {
+        "name": "Hiking Club Overnight",
+        "description": "Sleep under the stars on an overnight hiking trip with the hiking club. Bond over campfires, stargazing and challenging trails."
+      },
+      {
+        "name": "Yoga and Smoothies",
+        "description": "Find your zen at yoga and smoothies! Stretch out tired muscles and refuel with refreshing smoothies."
+      },
+      {
+        "name": "Jousting Tournament",
+        "description": "Grab a pool noodle and joust on the quad at our medieval jousting tournament! Knock friends off their \"horses\" to win."
+      },
+      {
+        "name": "Water Olympics",
+        "description": "Compete in wacky games like water balloon toss, slip n slide races and more at our Water Olympics! Get ready to get wet."
+      },
+      {
+        "name": "Laser Tag",
+        "description": "Evade and tag opponents with lasers at our exciting laser tag game night! Form teams and strategize your way to victory."
+      },
+      {
+        "name": "Meme Party",
+        "description": "Dress up as your favorite meme or viral sensation at our meme-themed costume party! Compare memes and make viral memories."
+      },
+      {
+        "name": "Open Mic Comedy",
+        "description": "Tell jokes, perform sketches and be hilarious at our open mic comedy night! Try out material or just enjoy laughs from rising comics."
+      },
+      {
+        "name": "Ice Cream Social",
+        "description": "Make your own sundaes with unlimited toppings at our ice cream social! Chat with friends over this sweet, chilled treat."
+      },
+      {
+        "name": "Holi Festival",
+        "description": "Get covered in vibrant powders at our Indian Holi festival celebration! Dance, laugh and get colorful with friends."
+      },
+      {
+        "name": "Coffee and Donuts",
+        "description": "Fuel up with piping hot coffee and sugary donuts at this morning meetup! The perfect study or social break."
+      },
+      {
+        "name": "Slip and Slide Kickball",
+        "description": "Get wet and wild playing kickball on a giant slippery slip n slide! Slide to bases in this amped up classic."
+      }
+    ]

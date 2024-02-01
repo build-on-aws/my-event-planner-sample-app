@@ -1,0 +1,24 @@
+{
+    "Room": 
+    [
+      {
+        "id": "1",
+        "name": "Lecture Hall 1", 
+        "capacity": 100,
+        "bookings": []
+      },
+      {
+        "id": "2",
+        "name": "Student's Union Common Room",
+        "capacity": 50,
+        "bookings": []
+      },
+      {
+        "id": "3",
+        "name": "Sports Arena", 
+        "capacity": 200,
+        "bookings": []
+      }
+    ] 
+  }
+  
