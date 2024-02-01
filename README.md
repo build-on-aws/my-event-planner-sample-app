@@ -5,9 +5,11 @@ The sample app is an event planning app for students on campus.
 Students can create events that other students can browse.   
 
 Update Jan 2024:
-There are currently 2 labs in the workshop, and there are 2 corresponding branches in the repo:
+There are currently 2 labs in the workshop, and there are corresponding branches in the repo:
 1. Lab 1: Minimal web app with user authentication (Amazon Cognito)
 2. Lab 2: Adding data to the web app (Amazon DynamoDB)
+
+Each lab has a branch for the initial lab code e.g., lab1-start and the completed lab code e.g., lab1-complete.
 
 ### Audience
 This is a foundational repo aimed at students learning serverless cloud concepts for the first time.  
