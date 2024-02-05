@@ -1,7 +1,7 @@
 ## Building a Serverless Web App with AWS Amplify (Sample App)
 
-*This is lab1-complete branch*  
-**This branch requires some AWS Amplify services to function, please see Lab 1 below**.
+*This is lab2-complete branch*  
+**This branch requires some AWS Amplify services to function, please see Lab 2 below**.
 
 This repo contains sample app code to accompany AWS Workshop Studio [Building a Serverless Web App with Amplify](https://catalog.us-east-1.prod.workshops.aws/workshops/1665a9b6-958b-4b70-ba52-14127b8fa99f/en-US) labs.   
 The sample app is an event planning app for students on campus.   
