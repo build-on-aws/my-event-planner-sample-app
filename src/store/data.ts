@@ -11,6 +11,12 @@ import EventDetails from '@/models/EventDetails';
 import { generateMockData, upLoadMockData } from './mock/mockGeneration';
 
 // TODO: Add Amplify GraphQL Imports 
+import { listEvents, listRooms } from '@/graphql/queries'
+import { deleteRoom, deleteEvent, createEvent, createRoom, updateEvent } from '@/graphql/mutations';
+import { generateClient } from 'aws-amplify/api';
+
+// Create GraphQL API client 
+const apiClient = generateClient(); 
 
 export const useDataStore = defineStore('data', {
   state: () => {
@@ -29,7 +35,26 @@ export const useDataStore = defineStore('data', {
 
     async fetchData() {
       // TODO: Add cloud service to get 'real' data
-      this.initMockData();
+      // Get all the rooms and events from the database. 
+      // Expensive operation (if a lot of data) so we only do this on start. 
+      // No need to do it after that in current architecture.      
+      const dbRooms = await apiClient.graphql({ query: listRooms });
+      const dbEvents = await apiClient.graphql({ query: listEvents });
+      
+      // Map the dbRooms to Room objects
+      this.rooms = dbRooms.data.listRooms.items.map(room => {
+        return new Room(room.id, room.name, room.capacity, []);
+        // TODO: no bookings returned! Challenge, how would you write a custom GraphQL query to return them?
+      });
+
+      // Map the dbEvents to Events objects
+      this.events = dbEvents.data.listEvents.items.map(event => {
+        let ev = new EventDetails(event.id, event.name, event.description, event.event_owner, event.room_id, event.image_file_name, new Date(event.event_datetime_start), new Date(event.event_datetime_end), event.event_duration, event.total_tickets);
+        event.tickets.forEach(ticket => {
+          ev.bookTicket(ticket);
+        });
+        return ev;
+      });
     },
 
     async upLoadData() {      
@@ -44,7 +69,14 @@ export const useDataStore = defineStore('data', {
         if (event.total_tickets > event.tickets.length) {
           event.bookTicket(studentId);
           // TODO: Add Amplify changes so DynamoDB is updated too
-          
+          // update database too
+          const input = {
+            id: event.id,
+            tickets: event.tickets
+          };
+
+          const updatedEvent = await apiClient.graphql( { query: updateEvent, variables: { input: input } } );
+          console.log('Ticket booked:', updatedEvent);          
         }
       }
     },
