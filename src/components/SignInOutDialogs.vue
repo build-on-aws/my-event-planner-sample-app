@@ -45,17 +45,7 @@ function signOutUser() {
             <template v-slot="{ user }">
                 {{ signIn() }}
             </template>
-        </authenticator>
-        <v-card title="Sign In" color="warning">
-            <v-card-text>
-                This has not been implemented yet, so just click "Sign In" below!
-            </v-card-text>
-            <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn text="Sign In" @click="signIn"></v-btn>
-                <v-btn text="Close" @click="closeDialog"></v-btn>
-            </v-card-actions>
-        </v-card>
+        </authenticator>        
     </v-dialog>
     <v-dialog v-model="authDialogSignOutState.showDialog" width="unset" transition="dialog-top-transition">
         <v-card title="Sign Out?" color="warning">
