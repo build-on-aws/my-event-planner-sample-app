@@ -10,7 +10,7 @@ import EventDetails from '@/models/EventDetails';
 // For creating testing/mock data
 import { generateMockData, upLoadMockData } from './mock/mockGeneration';
 
-// TODO: Add Amplify GraphQL Imports 
+// Add Amplify GraphQL Imports 
 import { listEvents, listRooms } from '@/graphql/queries'
 import { deleteRoom, deleteEvent, createEvent, createRoom, updateEvent } from '@/graphql/mutations';
 import { generateClient } from 'aws-amplify/api';
@@ -34,7 +34,7 @@ export const useDataStore = defineStore('data', {
     },
 
     async fetchData() {
-      // TODO: Add cloud service to get 'real' data
+      // Add cloud service to get 'real' data
       // Get all the rooms and events from the database. 
       // Expensive operation (if a lot of data) so we only do this on start. 
       // No need to do it after that in current architecture.      
@@ -68,7 +68,7 @@ export const useDataStore = defineStore('data', {
       if (event) {
         if (event.total_tickets > event.tickets.length) {
           event.bookTicket(studentId);
-          // TODO: Add Amplify changes so DynamoDB is updated too
+          // Add Amplify changes so DynamoDB is updated too
           // update database too
           const input = {
             id: event.id,
