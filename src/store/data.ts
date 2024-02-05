@@ -4,17 +4,19 @@
 // This store manages data locally on the client side right now, but integration with a cloud database is required.
 
 import { defineStore } from 'pinia';
-import Room from '@/models/Room';
+import { Booking, Room } from '@/models/Room';
 import EventDetails from '@/models/EventDetails';
 
 // For creating testing/mock data
-import { generateMockData } from './mock/mockGeneration';
+import { generateMockData, upLoadMockData } from './mock/mockGeneration';
+
+// TODO: Add Amplify GraphQL Imports 
 
 export const useDataStore = defineStore('data', {
   state: () => {
     return {
       rooms: [] as Room[],
-      events: [] as EventDetails[],
+      events: [] as EventDetails[],      
     };
   },
   actions: {
@@ -27,15 +29,22 @@ export const useDataStore = defineStore('data', {
 
     async fetchData() {
       // TODO: Add cloud service to get 'real' data
+      this.initMockData();
     },
 
+    async upLoadData() {      
+      upLoadMockData(); 
+    },    
+
     // Book ticket takes in a event id (number) and a student_id string parameter and calls bookTicket(student_id: string) on the event item in events array
-    // This happens in the client and does not relect in the data other clients have - it is all local. Amplify changes this to use DynamoDB    
-    async bookTicket(eventId: number, studentId: string) {
+    // This happens in the client and does not relect in the data other clients have - it is all local. 
+    async bookTicket(eventId: string, studentId: string) {
       const event: EventDetails = this.events.find(e => e.id === eventId) as EventDetails;
       if (event) {
         if (event.total_tickets > event.tickets.length) {
           event.bookTicket(studentId);
+          // TODO: Add Amplify changes so DynamoDB is updated too
+          
         }
       }
     },

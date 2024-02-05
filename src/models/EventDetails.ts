@@ -6,7 +6,7 @@
 */
 
 export default class EventDetails {
-  id: number;
+  id: string;
   name: string;
   description: string;
   event_owner: string;
@@ -18,7 +18,7 @@ export default class EventDetails {
   total_tickets: number;
   tickets: string[];
 
-  constructor(id: number, name: string, description: string, event_owner: string, room_id: string,
+  constructor(id: string, name: string, description: string, event_owner: string, room_id: string,
     image_file_name: string, event_datetime_start: Date, event_datetime_end: Date,
     event_duration: number, total_tickets: number) {
     this.id = id;

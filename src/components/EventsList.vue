@@ -21,8 +21,8 @@ const ui = useUIStore();
 const currentView = computed(() => ui.currentView);
 
 import { useAuthStore } from '../store/auth';
-const userAuthenticated = computed(() => useAuthStore().userAuthenticated);
-const userid: string = computed(() => useAuthStore().userId).value;
+const auth = useAuthStore();
+const userId = computed(() => auth.userId);
 
 onMounted(() => {
   refreshEventsToShow();
@@ -30,6 +30,10 @@ onMounted(() => {
 
 watch(currentView, () => {
   // currentView changed  
+  refreshEventsToShow();
+});
+
+watch(allEvents, () => {  
   refreshEventsToShow();
 });
 
@@ -44,12 +48,8 @@ function refreshEventsToShow() {
     return;
   }
 
-  if (currentView.value === 'my-tickets') {
-    if (!userAuthenticated) {
-      // This button should only be clickable if the user is signed in
-      return;
-    }
-    eventsToShow.value = (allEvents.value as EventDetails[]).filter(e => e.tickets.includes(userid));
+  if (currentView.value === 'my-tickets') {    
+    eventsToShow.value = (allEvents.value as EventDetails[]).filter(e => e.tickets.includes(userId.value));
     return;
   }
   // return all events, this is unexpected behaviour, it means an unhandled currentView...

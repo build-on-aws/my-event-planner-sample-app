@@ -8,7 +8,6 @@
  - Show user sign in/out with auth dialog
 -->
 
-
 <script setup lang="ts">
 import { reactive, provide, ref, computed, onMounted } from 'vue';
 import { useTheme } from 'vuetify';

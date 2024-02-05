@@ -6,11 +6,19 @@
  * then be imported elsewhere to test components that rely on 
  * real data without needing a connection to a database.
  */
-import Room from "@/models/Room";
+import{ Booking, Room } from "@/models/Room";
 import EventDetails from "@/models/EventDetails";
 
 import mockRooms from "./rooms.mock.json";
 import mockEvents from "./events.mock.json";
+
+import { useDataStore } from '@/store/data';
+
+import { listEvents, listRooms } from '@/graphql/queries';
+import { deleteRoom, deleteEvent, createEvent, createRoom } from '@/graphql/mutations';
+import { generateClient } from 'aws-amplify/api';
+// Create GraphQL API client 
+const apiClient = generateClient(); 
 
 let rooms: Room[] = [];
 let events: EventDetails[] = [];
@@ -28,7 +36,7 @@ export function generateMockData() {
   let imageIndex: number = 0;
   let count: number = 0;
   mockRooms.Room.forEach((room) => {
-    const newRoom: Room = new Room(room.id, room.name, room.capacity);
+    const newRoom: Room = new Room(room.id, room.name, room.capacity, []);
     rooms.push(newRoom);
   });
 
@@ -48,7 +56,7 @@ export function generateMockData() {
       // Hours
       for (let startHour = 17; startHour <= 21; startHour += 2) { // 17 - 19, 19 - 21, 21 - 23
         let endHour = startHour + 2;
-        const event = new EventDetails(events.length + 1, mockEvents[nameIndex].name,
+        const event = new EventDetails(new Number(events.length + 1).toString(), mockEvents[nameIndex].name,
           mockEvents[nameIndex].description, "1", room.id,
           eventImages[imageIndex],
           new Date(`${dateString}T${startHour}:00:00Z`),
@@ -88,3 +96,95 @@ export function generateMockData() {
 
   return { rooms, events };
 };
+
+export async function upLoadMockData() {
+  const data = useDataStore();
+  const allEvents = data.events;
+  const allRooms = data.rooms;
+
+  try {
+    // Get all rooms
+    const res = await apiClient.graphql({ query: listRooms });        
+    // Delete each room
+    const deleteRoomPromises = res.data.listRooms.items.map(room => {
+      return apiClient.graphql({ 
+        query: deleteRoom, 
+        variables: { input: { id: room.id } } }
+      );
+    });        
+    // Wait for all deletions
+    await Promise.all(deleteRoomPromises);        
+    console.log('All existing rooms deleted successfully');    
+  } catch (error) {
+    console.log('Error deleting rooms', error);
+  }
+
+  // Next deleteEvent
+  try {
+    // Get all events
+    const res = await apiClient.graphql({ query: listEvents });        
+    // Delete each event
+    const deleteEventsPromises = res.data.listEvents.items.map(event => {
+      return apiClient.graphql({ 
+        query: deleteEvent, 
+        variables: { input: { id: event.id } } }
+      );
+    });        
+    // Wait for all deletions
+    await Promise.all(deleteEventsPromises);        
+    console.log('All existing events deleted successfully');    
+  } catch (error) {
+    console.log('Error deleting events', error);
+  }
+  // Next createRoom
+  const createRoomsPromises = allRooms.map(async room => {        
+    // create a new room              
+    return apiClient.graphql({ query: createRoom,
+      variables: { input: {
+        id: room.id,
+        name: room.name,
+        capacity: room.capacity,
+        bookings: room.bookings.map(booking => ({
+          datetime_start: booking.datetime_start.toISOString(),
+          datetime_end: booking.datetime_end.toISOString(),
+        }))
+      }
+    }
+  })});
+  try {    
+    // Wait for all additions
+    await Promise.all(createRoomsPromises);
+    console.log('All rooms added successfully');
+  }
+  catch (error) {
+    console.log('Error adding rooms', error);        
+  }
+  // Finally createEvent
+  const createEventsPromises = allEvents.map(async event => {        
+    // create a new room              
+    const createEventInput = {
+      name: event.name,
+      description: event.description,
+      event_owner: event.event_owner,
+      room_id: event.room_id,
+      image_file_name: event.image_file_name,
+      event_datetime_start: event.event_datetime_start.toISOString(),
+      event_datetime_end: event.event_datetime_end.toISOString(),
+      event_duration: event.event_duration,
+      total_tickets: event.total_tickets,
+      tickets: event.tickets.map(ticket => ticket)
+    }              
+    return apiClient.graphql({
+      query: createEvent,
+      variables: { input: createEventInput } 
+    });      
+  });
+  try {    
+    // Wait for all additions
+    await Promise.all(createEventsPromises);
+    console.log('All events added successfully');
+  }
+  catch (error) {
+    console.log('Error adding events', error);        
+  }          
+}
