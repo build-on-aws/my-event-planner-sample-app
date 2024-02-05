@@ -7,6 +7,15 @@
 import { DialogState } from '@/types/DialogState';
 import { inject, computed } from 'vue';
 import { useAuthStore } from '@/store/auth';
+import { signOut } from 'aws-amplify/auth'
+
+import { Authenticator } from "@aws-amplify/ui-vue";
+import "@aws-amplify/ui-vue/styles.css";
+
+import { Amplify } from 'aws-amplify';
+import awsconfig from '../aws-exports';
+
+Amplify.configure(awsconfig);
 
 const authDialogSignOutState = inject<DialogState>('authDialogSignOutState', { showDialog: false });
 const authDialogSignInState = inject<DialogState>('authDialogSignInState', { showDialog: false });
@@ -19,6 +28,7 @@ function closeDialog() {
 }
 
 function signIn() {
+    signOut();
     authStore.userAuthenticated = true;
     authDialogSignInState.showDialog = false;
 }
@@ -31,6 +41,11 @@ function signOutUser() {
 
 <template>
     <v-dialog v-model="authDialogSignInState.showDialog" width="unset" transition="dialog-top-transition">
+        <authenticator>
+            <template v-slot="{ user }">
+                {{ signIn() }}
+            </template>
+        </authenticator>
         <v-card title="Sign In" color="warning">
             <v-card-text>
                 This has not been implemented yet, so just click "Sign In" below!
